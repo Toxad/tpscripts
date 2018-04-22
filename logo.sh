@@ -79,9 +79,9 @@ addtext () {
 ### Start
 
 # Create image and move it 
-if [ -a "`command -v pngtopnm`" ] \
-&& [ -a "`command -v ppmquant`" ] \
-&& [ -a "`command -v pnmtoplainpnm`" ]; then
+if [ -n "`command -v pngtopnm`" ] \
+&& [ -n "`command -v ppmquant`" ] \
+&& [ -n "`command -v pnmtoplainpnm`" ]; then
     pngtopnm $1 | ppmquant -fs 223 | pnmtoplainpnm > "${SRCPATH}drivers/video/logo/logo_${IMAGENAME}_clut224.ppm"
 else
     echo "error: netpbm tools not found"
